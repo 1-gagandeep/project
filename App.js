@@ -1,20 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { View, Text, TextInput, TouchableOpacity, SafeAreaView, Image, } from 'react-native';
 
-export default function App() {
+import styleComponent from "./styleComponent";
+
+function SignUp_page() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styleComponent.container}>
+      <View style={styleComponent.upper}>
+        <Text style={styleComponent.text}>Register Page</Text>
+      </View>
+
+      <View>
+
+        <Text style={styleComponent.upText1} >Create An Account</Text>
+        <TextInput placeholder='First Name'  style={styleComponent.input1} required></TextInput>
+        <TextInput placeholder='Last Name' style={styleComponent.input1} required></TextInput>
+        <TextInput placeholder='Contact No.'  style={styleComponent.input1} required></TextInput>
+        <TextInput placeholder='Email'  style={styleComponent.input1} required></TextInput>
+        <TextInput placeholder="Password"   secureTextEntry style={styleComponent.input1} required></TextInput>
+        <TextInput placeholder="Confirm Password" secureTextEntry style={styleComponent.input1} required></TextInput>
+
+        <TouchableOpacity style={styleComponent.upButton} >
+          <Text style={styleComponent.upTextButton}>SignUp</Text>
+        </TouchableOpacity>
+
+
+
+      </View>
+
+      <View style={styleComponent.lowerUp}></View>
+    </SafeAreaView>
+
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default SignUp_page
